@@ -63,3 +63,20 @@ quiz = [    {        "question": "Which of these idol groups hosted Inkopolis Ne
 # initialize the score to zero
 score = 0
 
+# displaing the questions and answer 
+for q in quiz:
+    print(q["question"])
+    for c in q["choices"]:
+        print(c)
+    # Getting the user to input either A, B or C
+    user_answer = input("Enter your answer (A, B, or C): ")
+    # Checking if the answer is correct or not
+    if user_answer.upper() == q["answer"]:
+        print("Correct!")
+    # Adding to the score if correct
+        score += 1
+    # Displying a message if answer is incorrect
+    else:
+        print("Incorrect.")
+
+
