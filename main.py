@@ -10,7 +10,7 @@ print("|---Splatoon Quiz---|")
 print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.\nTo play, use the letters 'a', 'b', or 'c' to select your answer to each question.\nGood luck!\n")
 
 # define the questions and their answers
-questions = [    {        "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",        "choices": ["A.Off The Hook", "B. Squid Sisters", "C. Deep Cut"],
+quiz = [    {        "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",        "choices": ["A.Off The Hook", "B. Squid Sisters", "C. Deep Cut"],
         "answer": "B"
     },
     {
@@ -59,3 +59,7 @@ questions = [    {        "question": "Which of these idol groups hosted Inkopol
         "answer": "C"
     }
 ]
+
+# initialize the score to zero
+score = 0
+
