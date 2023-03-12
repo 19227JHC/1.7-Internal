@@ -78,5 +78,7 @@ for q in quiz:
     # Displying a message if answer is incorrect
     else:
         print("Incorrect.")
+# displaying the results at end of quiz
+print("You got", score, "out of", len(quiz), "questions correct.")
 
 
