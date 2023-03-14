@@ -9,7 +9,6 @@
 print("|---Splatoon Quiz---|")
 print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.\nTo play, use the letters 'a', 'b', or 'c' to select your answer to each question.\nGood luck!\n")
 
-
 # define the questions and their answers
 quiz = [    
     {   "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",      
@@ -63,8 +62,14 @@ quiz = [
     }
 ]
 
+# Import random for shuffleing the questions
+import random
+
 # Initialize the score
 score = 0
+
+# Command to shuffle the questions
+random.shuffle(quiz)
 
 # Display the questions and choices, and get user input
 for i, q in enumerate(quiz): # Added an enumerate function to number the questions
@@ -79,5 +84,5 @@ for i, q in enumerate(quiz): # Added an enumerate function to number the questio
         print(f"Incorrect. The correct answer is {q['answer']}.") # Made it so that it will tell you the correct answer with an f-string
 
 # Display the results
-print(f"You got {score} out of {len(quiz)} questions correct.") # Updated this
+print(f"\nYou got {score} out of {len(quiz)} questions correct.") # Updated this
 
