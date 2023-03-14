@@ -9,8 +9,11 @@
 print("|---Splatoon Quiz---|")
 print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.\nTo play, use the letters 'a', 'b', or 'c' to select your answer to each question.\nGood luck!\n")
 
+
 # define the questions and their answers
-quiz = [    {        "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",        "choices": ["A.Off The Hook", "B. Squid Sisters", "C. Deep Cut"],
+quiz = [    
+    {   "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",      
+        "choices": ["A.Off The Hook", "B. Squid Sisters", "C. Deep Cut"],
         "answer": "B"
     },
     {
@@ -60,25 +63,21 @@ quiz = [    {        "question": "Which of these idol groups hosted Inkopolis Ne
     }
 ]
 
-# initialize the score to zero
+# Initialize the score
 score = 0
 
-# displaing the questions and answer 
-for q in quiz:
-    print(q["question"])
-    for c in q["choices"]:
-        print(c)
-    # Getting the user to input either A, B or C
-    user_answer = input("Enter your answer (A, B, or C): ")
-    # Checking if the answer is correct or not
-    if user_answer.upper() == q["answer"]:
+# Display the questions and choices, and get user input
+for i, q in enumerate(quiz):
+    print(f"Question {i+1}: {q['question']}")
+    for choice in q['choices']:
+        print(choice)
+    user_answer = input("Enter your answer (A, B, or C): ").upper()
+    if user_answer == q["answer"]:
         print("Correct!")
-    # Adding to the score if correct
         score += 1
-    # Displying a message if answer is incorrect
     else:
-        print("Incorrect.")
-# displaying the results at end of quiz
-print("You got", score, "out of", len(quiz), "questions correct.")
+        print(f"Incorrect. The correct answer is {q['answer']}.")
 
+# Display the results
+print(f"You got {score} out of {len(quiz)} questions correct.")
 
