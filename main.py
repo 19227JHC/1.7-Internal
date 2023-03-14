@@ -67,17 +67,17 @@ quiz = [
 score = 0
 
 # Display the questions and choices, and get user input
-for i, q in enumerate(quiz):
-    print(f"Question {i+1}: {q['question']}")
+for i, q in enumerate(quiz): # Added an enumerate function to number the questions
+    print(f"Question {i+1}: {q['question']}") # Used an f-string to make the output easier to read
     for choice in q['choices']:
         print(choice)
-    user_answer = input("Enter your answer (A, B, or C): ").upper()
+    user_answer = input("Enter your answer (A, B, or C): ").upper() # Used str.upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
     if user_answer == q["answer"]:
         print("Correct!")
         score += 1
     else:
-        print(f"Incorrect. The correct answer is {q['answer']}.")
+        print(f"Incorrect. The correct answer is {q['answer']}.") # Made it so that it will tell you the correct answer with an f-string
 
 # Display the results
-print(f"You got {score} out of {len(quiz)} questions correct.")
+print(f"You got {score} out of {len(quiz)} questions correct.") # Updated this
 
