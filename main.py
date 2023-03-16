@@ -76,22 +76,22 @@ for i, q in enumerate(quiz): # Added an enumerate function to number the questio
     print(f"Question {i+1}: {q['question']}") # Used an f-string to make the output easier to read
     for choice in q['choices']:
         print(choice)
-    user_answer = input("Enter your answer (A, B, or C): ").upper() # Used str.upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
+    user_answer = input("\nEnter your answer (A, B, or C): ").upper() # Used str.upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
     if user_answer == q["answer"]:
-        print("Correct!")
+        print("\nCorrect!\n")
         score += 1
     else:
-        print(f"Incorrect. The correct answer is {q['answer']}.") # Made it so that it will tell you the correct answer with an f-string
+        print(f"\nIncorrect. The correct answer is {q['answer']}.\n") # Made it so that it will tell you the correct answer with an f-string
 
       # Define the custom messages based on the score
 if score == 0:
-    message = "Opps! You didn't get any questions right. Better luck next time"
+    message = "\nOpps! You didn't get any questions right. Better luck next time."
 elif score <= 5:
-    message = f"You got {score} out of {len(quiz)} questions correct. You can do better!"
+    message = f"\nYou got {score} out of {len(quiz)} questions correct. You can do better!"
 elif score <= 8:
-    message = f"You got {score} out of {len(quiz)} questions correct. Good job!"
+    message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!"
 else:
-    message = f"Congratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!"
+    message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!"
 
 # Display the message depending on the user score
 print(message)
