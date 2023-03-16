@@ -12,7 +12,7 @@ print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the 
 # define the questions and their answers
 quiz = [    
     {   "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",      
-        "choices": ["A.Off The Hook", "B. Squid Sisters", "C. Deep Cut"],
+        "choices": ["A.Off The Hook", "B.Squid Sisters", "C.Deep Cut"],
         "answer": "B"
     },
     {
@@ -83,6 +83,17 @@ for i, q in enumerate(quiz): # Added an enumerate function to number the questio
     else:
         print(f"Incorrect. The correct answer is {q['answer']}.") # Made it so that it will tell you the correct answer with an f-string
 
-# Display the results
-print(f"\nYou got {score} out of {len(quiz)} questions correct.") # Updated this
+      # Define the custom messages based on the score
+if score == 0:
+    message = "Opps! You didn't get any questions right. Better luck next time"
+elif score <= 5:
+    message = f"You got {score} out of {len(quiz)} questions correct. You can do better!"
+elif score <= 8:
+    message = f"You got {score} out of {len(quiz)} questions correct. Good job!"
+else:
+    message = f"Congratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!"
+
+# Display the message depending on the user score
+print(message)
+
 
