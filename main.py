@@ -6,11 +6,36 @@
   
   TIP: Use assessment guide to help guide you through this Internal
 '''
-print("|---Splatoon Quiz---|")
-print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.\nTo play, use the letters 'a', 'b', or 'c' to select your answer to each question.\nGood luck!\n")\
 
-# Import random for shuffleing the questions
-import random
+# -------------------------------------------------------------- Option to Start --------------------------------------------------------------
+print("|---Splatoon Quiz---|")
+print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.")
+
+# function to ask the user if they are ready to start the quiz
+def start_quiz():
+  
+  ready = input("Are you ready to start the quiz? (Y/N) ").lower() # Used str.lower() method to make it so the program acepts both Y and y
+  # If the user is ready to take the quiz and inputs Y, it will display the instructions and start the quiz 
+  if ready == "y":
+    print("\nAwsome!\nTo take the quiz, input the letters 'A', 'B', or 'C' to select your answer to each question, once chosen answer has been selected press enter to confirm it.\nGood luck!\n")
+    return True
+
+    # If the user is not ready to take the quiz and inputs N, it will exit the program
+  elif ready == "n":
+        print("No problem, come back when you're ready!")
+        return False
+
+  # If the user input is not a valid input, it will print this message until they enter a valid one
+  else:
+        print("Invalid input, please enter 'Y' or 'N'.")
+        return start_quiz() # Call the function again if the user inputs an invalid input
+
+# Call the start_quiz function
+if start_quiz():
+
+# -------------------------------------------------------------- Quiz Questions\Setup ---------------------------------------------------------
+  # Import random function for shuffleing the questions
+  import random
 
 # define the questions and their answers
 quiz = [    
@@ -72,6 +97,8 @@ random.shuffle(quiz)
 # Initialize the score
 score = 0
 
+# -------------------------------------------------------------- Quiz Code --------------------------------------------------------------------
+
 # Display the questions and choices, and get user input
 for i, q in enumerate(quiz): # Added an enumerate function to number the questions
     print(f"Question {i+1}: {q['question']}") # Used an f-string to make the output easier to read
@@ -81,31 +108,37 @@ for i, q in enumerate(quiz): # Added an enumerate function to number the questio
 
     # Use a while loop to make sure the user inputs a valid answer
     while True:
-        user_answer = input("Enter your answer (A, B, or C): ").upper() # Used str.upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
+        user_answer = input("\nEnter your answer (A, B, or C): ").upper() # Used .upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
         if user_answer in ["A", "B", "C"]:
+          
             break
+          
           # If the user input is not a valid input, it will print this message until they enter a valid one
         else:
-            print("Invalid input, please enter A, B, or C.")
+            print("\nInvalid input, please enter A, B, or C.")
 
     if user_answer == q["answer"]:
-        print("Correct!")
+        print("\nCorrect!\n")
         score += 1
+      
     else:
-        print(f"Incorrect. The correct answer is {q['answer']}.") # Made it so that it will tell you the correct answer with an f-string an q (?)
+        print(f"\nIncorrect. The correct answer is {q['answer']}.\n") # Made it so that it will tell you the correct answer with an f-string an q (?)
 
       
       # Define the custom messages based on the score
 if score == 0:
     message = "\nOpps! You didn't get any questions right. Better luck next time." # This message diplays if the user got no qustions correct
+  
 elif score <= 5:
     message = f"\nYou got {score} out of {len(quiz)} questions correct. You can do better!" # This message displays if the user got 5 or less correct
+  
 elif score <= 8:
-    message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!" # this message displays if the user got 8 or les correct
+    message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!" # this message displays if the user got 8 or less correct
+  
 else:
     message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!" # This message diplays if the user got 9 or 10 questions correct
 
 # Displays the messages above depending on the users score
 print(message)
 
-
+# -------------------------------------------------------------- End --------------------------------------------------------------------------
