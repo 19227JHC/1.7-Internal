@@ -7,7 +7,10 @@
   TIP: Use assessment guide to help guide you through this Internal
 '''
 print("|---Splatoon Quiz---|")
-print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.\nTo play, use the letters 'a', 'b', or 'c' to select your answer to each question.\nGood luck!\n")
+print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.\nTo play, use the letters 'a', 'b', or 'c' to select your answer to each question.\nGood luck!\n")\
+
+# Import random for shuffleing the questions
+import random
 
 # define the questions and their answers
 quiz = [    
@@ -62,32 +65,36 @@ quiz = [
     }
 ]
 
-# Import random for shuffleing the questions
-import random
-
-# Initialize the score
-score = 0
 
 # Command to shuffle the questions
 random.shuffle(quiz)
 
+# Initialize the score
+score = 0
+
 # Display the questions and choices, and get user input
 for i, q in enumerate(quiz): # Added an enumerate function to number the questions
     print(f"Question {i+1}: {q['question']}") # Used an f-string to make the output easier to read
+  
     for choice in q['choices']:
         print(choice)
+
+    # Use a while loop to make sure the user inputs a valid answer
     while True:
-      user_answer = input("\nEnter your answer (A, B, or C): ").upper() # Used str.upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
+        user_answer = input("Enter your answer (A, B, or C): ").upper() # Used str.upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
+        if user_answer in ["A", "B", "C"]:
+            break
+          # If the user input is not a valid input, it will print this message until they enter a valid one
+        else:
+            print("Invalid input, please enter A, B, or C.")
+
     if user_answer == q["answer"]:
-        print("\nCorrect!\n")
+        print("Correct!")
         score += 1
-        break
-    elif user_answer in ["A", "B", "C"]:
-      print(f"\nIncorrect. The correct answer is {q['answer']}.\n") # Made it so that it will tell you the correct answer with an f-string
-      break
-#If the user input is not any form of a, b or c
-    else: 
-      print("Invalid input, please enter A, B, or C.")
+    else:
+        print(f"Incorrect. The correct answer is {q['answer']}.") # Made it so that it will tell you the correct answer with an f-string an q (?)
+
+      
       # Define the custom messages based on the score
 if score == 0:
     message = "\nOpps! You didn't get any questions right. Better luck next time." # This message diplays if the user got no qustions correct
