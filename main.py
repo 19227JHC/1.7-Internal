@@ -123,57 +123,57 @@ if start_quiz():
   ]
 
  # Import the random module to shuffle the quiz questions
-import random
+  import random
 
 # Command to shuffle the questions
-random.shuffle(quiz)
+  random.shuffle(quiz)
 
 # Initialize the score to 0
-score = 0
+  score = 0
 
 # ------------------------------------------------------- Quiz Output Code --------------------------------------------------------------------
 
-# Display the questions and choices, and get user input
-for i, q in enumerate(quiz): # Loop through the shuffled quiz list with the enumerate function to number the questions
-    print(f"Question {i+1}: {q['question']}") # Display the question number and question text using an f-string
+  # Display the questions and choices, and get user input
+  for i, q in enumerate(quiz): # Loop through the shuffled quiz list with the enumerate function to number the questions
+      print(f"Question {i+1}: {q['question']}") # Display the question number and question text using an f-string
+    
+      for choice in q['choices']: 
+          print(choice) # Display the answer choices for the current question
   
-    for choice in q['choices']: 
-        print(choice) # Display the answer choices for the current question
-
-    # Use a while loop to make sure the user inputs a valid answer
-    while True:
-        user_answer = input("\nEnter your answer (A, B, or C): ").upper() # Used .upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
-        if user_answer in ["A", "B", "C"]:
-          
-            break
-          
-          # If the user input is not a valid input, it will print this message until they enter a valid one
-        else:
-            print("\n\033[0;31mInvalid input, please enter A, B, or C.\033[0m")
-
-    if user_answer == q["answer"]:
-        print("\033[0;32m\nCorrect!\n\033[0m")
-        score += 1
-      
-    else:
-        print(f"\033[0;31m\nIncorrect. The correct answer is {q['answer']}.\n\033[0m") # Made it so that it will tell you the correct answer with an f-string
-
-      
-      # Define the custom messages based on the final score
-if score == 0:
-    message = "\nOpps! You didn't get any questions right. Better luck next time." # This message diplays if the user got no qustions correct
+      # Use a while loop to make sure the user inputs a valid answer
+      while True:
+          user_answer = input("\nEnter your answer (A, B, or C): ").upper() # Used .upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
+          if user_answer in ["A", "B", "C"]:
+            
+              break
+            
+            # If the user input is not a valid input, it will print this message until they enter a valid one
+          else:
+              print("\n\033[0;31mInvalid input, please enter A, B, or C.\033[0m")
   
-elif score <= 5:
-    message = f"\nYou got {score} out of {len(quiz)} questions correct. You can do better!" # This message displays if the user got 5 or less correct
+      if user_answer == q["answer"]:
+          print("\033[0;32m\nCorrect!\n\033[0m")
+          score += 1
+        
+      else:
+          print(f"\033[0;31m\nIncorrect. The correct answer is {q['answer']}.\n\033[0m") # Made it so that it will tell you the correct answer with an f-string
   
-elif score <= 9:
-    message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!" # this message displays if the user got 9 or less correct
+        
+        # Define the custom messages based on the final score
+  if score == 0:
+      message = "\nOpps! You didn't get any questions right. Better luck next time." # This message diplays if the user got no qustions correct
+    
+  elif score <= 5:
+      message = f"\nYou got {score} out of {len(quiz)} questions correct. You can do better!" # This message displays if the user got 5 or less correct
+    
+  elif score <= 9:
+      message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!" # this message displays if the user got 9 or less correct
+    
+  else:
+      message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!" # This message diplays if the user got 9 or above questions correct
   
-else:
-    message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!" # This message diplays if the user got 9 or above questions correct
-
-# Displays the messages above depending on the users score at the end of the quiz
-print(message)
-
+  # Displays the messages above depending on the users score at the end of the quiz
+  print(message)
+  
 
 # -------------------------------------------------------------- End --------------------------------------------------------------------------
