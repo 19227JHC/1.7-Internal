@@ -8,8 +8,35 @@
 '''
 
 # -------------------------------------------------------------- Option to Start --------------------------------------------------------------
-print("|---Splatoon Quiz---|")
-print("Welcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.")
+print("  ____        _       _                                  _    ")
+print(" / ___| _ __ | | __ _| |_ ___   ___  _ __     __ _ _   _(_)____  ")
+print(" \___ \| '_ \| |/ _` | __/ _ \ / _ \| '_ \   / _` | | | | |_  /  ")
+print("  ___) | |_) | | (_| | || (_) | (_) | | | | | (_| | |_| | |/ /   ")
+print(" |____/| .__/|_|\__,_|\__\___/ \___/|_| |_|  \__, |\__,_|_/___|  ")
+print("       |_|                                      |_|              ")
+
+
+
+
+print("\033[0;92m                              ██████              ")
+print("                            ██▒▒▒▒▒▒██            ")
+print("                          ██▒▒▒▒▒▒▒▒▒▒██          ")
+print("                        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██        ")
+print("                      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ")
+print("                    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
+print("                  ██▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒██  ")
+print("                  ██▒▒▒▒▒▒██  ████  ████▒▒▒▒▒▒██  ")
+print("                ██▒▒▒▒▒▒██  ████  ████  ██▒▒▒▒▒▒██")
+print("                ██▒▒▒▒▒▒██              ██▒▒▒▒▒▒██")
+print("                  ████▒▒▒▒██    ██    ██▒▒▒▒████  ")
+print("                      ██▒▒▒▒████▒▒████▒▒▒▒██      ")
+print("                      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ")
+print("                    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
+print("                    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
+print("                    ██▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒██    ")
+print("                      ██████  ██████  ██████      \033[0m")
+
+print("\nWelcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.")
 
 # Define function to ask user if they are ready to start the quiz
 def start_quiz():
@@ -19,7 +46,7 @@ def start_quiz():
   
   # If the user is ready to take the quiz and inputs Y, it will display the instructions and start the quiz 
   if ready == "y":
-    print("\nAwsome!\nTo take the quiz, input the letters 'A', 'B', or 'C' to select your answer to each question, once chosen answer has been selected press enter to confirm it.\nGood luck!\n")
+    print("\nAwsome!\nTo take the quiz, input the letters 'A', 'B', or 'C' to select your answer to each question, once chosen answer has been selected/inputed press enter to confirm it.\nGood luck!\n")
     return True
 
     # If the user is not ready to take the quiz and inputs N, it will exit the program
@@ -29,18 +56,16 @@ def start_quiz():
 
   # If the user input is not a valid input, it will print this message until they input a valid one
   else:
-        print("Invalid input, please enter 'Y' or 'N'.")
+        print("\033[0;31mInvalid input, please enter 'Y' or 'N'.\033[0m")
         return start_quiz() # Call the function again if the user inputs an invalid input
 
 # Call the start_quiz function
 if start_quiz():
 
 # -------------------------------------------------------------- Quiz Questions\Setup ---------------------------------------------------------
-  # Import the random module to shuffle the quiz questions
-  import random
 
-# Define the quiz as a list of dictionaries, where each dictionary represents a question and its answer choices
-quiz = [    
+# Define the questions of the quiz as a list of dictionaries, where each dictionary represents a question and its choices for answers
+  quiz = [
     {   "question": "Which of these idol groups hosted Inkopolis News in Splatoon 1?",      
         "choices": ["A.Off The Hook", "B.Squid Sisters", "C.Deep Cut"],
         "answer": "B"
@@ -89,25 +114,27 @@ quiz = [
         "question": "How many Denizens of the Deep are there in the Deepsea Metro?",
         "choices": ["A.5", "B.13", "C.9"],
         "answer": "C"
-    }
+    },
     {
-        "question": "What was the naem of the final splatfest in Splatoon 2?",
+        "question": "What was the name of the final splatfest in Splatoon 2?",
         "choices": ["A.Splatocalypse", "B.Splatfest Memories", "C.Superfest"],
         "answer": "A"
-    }
-]
+    } 
+  ]
 
+ # Import the random module to shuffle the quiz questions
+import random
 
 # Command to shuffle the questions
 random.shuffle(quiz)
 
-# Initialize the score
+# Initialize the score to 0
 score = 0
 
-# -------------------------------------------------------------- Quiz Code --------------------------------------------------------------------
+# ------------------------------------------------------- Quiz Output Code --------------------------------------------------------------------
 
 # Display the questions and choices, and get user input
-for i, q in enumerate(quiz):# Loop through the shuffled quiz list with the enumerate function to number the questions
+for i, q in enumerate(quiz): # Loop through the shuffled quiz list with the enumerate function to number the questions
     print(f"Question {i+1}: {q['question']}") # Display the question number and question text using an f-string
   
     for choice in q['choices']: 
@@ -122,14 +149,14 @@ for i, q in enumerate(quiz):# Loop through the shuffled quiz list with the enume
           
           # If the user input is not a valid input, it will print this message until they enter a valid one
         else:
-            print("\nInvalid input, please enter A, B, or C.")
+            print("\n\033[0;31mInvalid input, please enter A, B, or C.\033[0m")
 
     if user_answer == q["answer"]:
-        print("\nCorrect!\n")
+        print("\033[0;32m\nCorrect!\n\033[0m")
         score += 1
       
     else:
-        print(f"\nIncorrect. The correct answer is {q['answer']}.\n") # Made it so that it will tell you the correct answer with an f-string an q (?)
+        print(f"\033[0;31m\nIncorrect. The correct answer is {q['answer']}.\n\033[0m") # Made it so that it will tell you the correct answer with an f-string
 
       
       # Define the custom messages based on the final score
@@ -143,9 +170,10 @@ elif score <= 9:
     message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!" # this message displays if the user got 9 or less correct
   
 else:
-    message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!" # This message diplays if the user got 10 or 11 questions correct
+    message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!" # This message diplays if the user got 9 or above questions correct
 
 # Displays the messages above depending on the users score at the end of the quiz
 print(message)
+
 
 # -------------------------------------------------------------- End --------------------------------------------------------------------------
