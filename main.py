@@ -37,14 +37,14 @@ print("                    ██▒▒▒▒▒▒██▒▒▒▒▒▒█�
 print("                      ██████  ██████  ██████      \033[0m")
 
 print("\nWelcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.")
+# Instrutions for beggining
+print("\nIf you are ready to start the quiz input Y then press enter to confrim your answer")
+print("\nIf you are not ready to start the quiz input N then press enter to confrim your answer")
 
 # Define function to ask user if they are ready to start the quiz
 def start_quiz():
 
-# Asks the user if they are ready to start the quiz
-  print("\nWelcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.")
-  print("\nIf you are ready to start the quiz input Y then press enter to confrim your answer")
-  print("\nIf you are not ready to start the quiz input N then press enter to confrim your answer")
+# Asks the user if they are ready to start the quiz 
   ready = input("\nAre you ready to start the quiz? (Y/N) ").lower() # Used str.lower() method to make it so the program acepts both Y and y
   
   # If the user is ready to take the quiz and inputs Y, it will display the instructions and start the quiz 
@@ -222,7 +222,9 @@ if start_quiz():
   print("⣿⣿⣿⣿⣿⣿⣿⣿⢫⠏⣰⣿⡇⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡄⠹⣿⣇⠀⠠⣿⣿⡇⢸⡄⣿⣿⣿⣿⠄⠈⠸⡟⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⡿⢃⡤⠂⣠⣄⢡⠻⣿⣿⣿⣿")
   print("⣿⣿⣿⣿⣿⣿⣿⠏⠊⣼⣿⣿⣄⠑⡈⢻⣿⣿⣿⡿⡛⢿⣿⣿⣿⠂⠘⣡⣶⣶⣤⣌⣑⠈⠳⠘⢛⣡⣤⣶⣶⣆⡐⢸⣿⣿⠟⢋⠁⠉⢿⠟⣉⠔⣁⣤⣾⣿⣿⡆⠃⢹⣿⣿⣿")
   print("⣿⣿⣿⣿⣿⣿⣿⡸⢠⡉⢿⣿⣿⣷⣌⠀⠙⠛⠉⢠⣶⣶⣿⣿⠟⢁⣾⣿⠿⢿⣿⣿⣿⣦⠀⢾⣿⣿⣿⣿⠿⣿⣷⣄⠙⠿⠿⠿⠋⠀⡠⠊⣡⣾⣿⣿⣿⣿⠟⣠⢱⣸⣿⣿⣿")
-  print("⣿⣿⣿⣿⣿⡿⡁⢁⣿⣷⣈⠻⣿⣿⣿⣷⣄⠈⠲⣤⡉⠉⠉⠁⣀⣉⣭⣶⣶⣶⣦⣭⣭⠁⣠⠈⣭⣭⣴⣶⣶⣶⣬⣍⠑⠒⠒⠀⠠⢊⣴⣾⣿⣿⣿⣿⠟⣡⣾⣿⣆⠣⢻⣿⣿")
+  print("⣿⣿⣿⣿⣿⡿⡁⢁⣿⣷⣈⠻⣿⣿⣿⣷⣄⠈⠲⣤⡉⠉⠉⠁⣀⣉⣭⣶⣶⣶⣦⣭⣭⠁⣠⠈⣭⣭⣴⣶⣶⣶⣬⣍⠑⠒⠒⠀⠠⢊⣴⣾⣿⣿⣿⣿⠟⣡⣾⣿⣆⠣⢻⣿⣿\033[0m")
+
+  print("\nDepedning on screen size, you may need to scroll up for your score :)")
   
   
   # -------------------------------------------------------------- End --------------------------------------------------------------------------
