@@ -16,23 +16,23 @@ print(" |____/| .__/|_|\__,_|\__\___/ \___/|_| |_|  \__, |\__,_|_/___|  ")
 print("       |_|                                      |_|              ")
 
 
-print("\033[0;92m                             ██████              ")
-print("                           ██▒▒▒▒▒▒██            ")
-print("                         ██▒▒▒▒▒▒▒▒▒▒██          ")
-print("                       ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██        ")
-print("                     ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ")
-print("                   ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
-print("                 ██▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒██  ")
-print("                 ██▒▒▒▒▒▒██  ████  ████▒▒▒▒▒▒██  ")
-print("               ██▒▒▒▒▒▒██  ████  ████  ██▒▒▒▒▒▒██")
-print("               ██▒▒▒▒▒▒██              ██▒▒▒▒▒▒██")
-print("                 ████▒▒▒▒██    ██    ██▒▒▒▒████  ")
-print("                     ██▒▒▒▒████▒▒████▒▒▒▒██      ")
-print("                     ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ")
-print("                   ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
-print("                   ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
-print("                   ██▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒██    ")
-print("                     ██████  ██████  ██████      \033[0m")
+print("\033[0;92m                              ██████              ")
+print("                            ██▒▒▒▒▒▒██            ")
+print("                          ██▒▒▒▒▒▒▒▒▒▒██          ")
+print("                        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██        ")
+print("                      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ")
+print("                    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
+print("                  ██▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒██  ")
+print("                  ██▒▒▒▒▒▒██  ████  ████▒▒▒▒▒▒██  ")
+print("                ██▒▒▒▒▒▒██  ████  ████  ██▒▒▒▒▒▒██")
+print("                ██▒▒▒▒▒▒██              ██▒▒▒▒▒▒██")
+print("                  ████▒▒▒▒██    ██    ██▒▒▒▒████  ")
+print("                      ██▒▒▒▒████▒▒████▒▒▒▒██      ")
+print("                      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ")
+print("                    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
+print("                    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ")
+print("                    ██▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒██    ")
+print("                      ██████  ██████  ██████      \033[0m")
 
 print("\nWelcome to the Splatoon Quiz!\nThis quiz will test your knowledge of the game Splatoon.")
 
@@ -138,48 +138,49 @@ if start_quiz():
   
   # ------------------------------------------------------- Quiz Output Code ---------------------------------------------------
   
-    # Display the questions and choices, and get user input
-    for i, q in enumerate(quiz): # Loop through the shuffled quiz list with the enumerate function to number the questions
-        print(f"Question {i+1}: {q['question']}") # Display the question number and question text using an f-string
+          # Display the questions and choices, and get user input
       
-        for choice in q['choices']: 
-            print(choice) # Display the answer choices for the current question
-    
-        # Use a while loop to make sure the user inputs a valid answer
-        while True:
-            user_answer = input("\nEnter your answer (A, B, or C): ").upper() # Used .upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
-            if user_answer in ["A", "B", "C"]:
-              
-                break
-              
+    for i, q in enumerate(quiz):  # Loop through the shuffled quiz list with the enumerate function to number the questions
+          print(f"Question {i+1}: {q['question']}")  # Display the question number and question text using an f-string
+            
+          for choice in q['choices']: 
+              print(choice)  # Display the answer choices for the current question
+          
+          # Use a while loop to make sure the user inputs a valid answer
+          while True:
+              user_answer = input("\nEnter your answer (A, B, or C): ").upper()  # Used .upper() method to make it so that the answer will be accepted if it is a A,B,C or a,b,c
+              if user_answer in ["A", "B", "C"]:
+                  break
+                    
               # If the user input is not a valid input, it will print this message until they enter a valid one
-            else:
-                print("\n\033[0;31mInvalid input, please enter A, B, or C.\033[0m")
-    
-        if user_answer == q["answer"]:
-            print("\033[0;32m\nCorrect!\n\033[0m")
-            score += 1
+              else:
+                  print("\n\033[0;31mInvalid input, please enter A, B, or C.\033[0m")
           
-        else:
-            print(f"\033[0;31m\nIncorrect. The correct answer is {q['answer']}.\n\033[0m") # Made it so that it will tell you the correct answer with an f-string
-    
+          if user_answer == q["answer"]:
+              print("\033[0;32m\nCorrect!\n\033[0m")
+              score += 1
+                
+          else:
+              print(f"\033[0;31m\nIncorrect. The correct answer is {q['answer']}.\n\033[0m")  # Made it so that it will tell you the correct answer with an f-string
           
-          # Define the custom messages based on the final score
+                
+      # Define the custom messages based on the final score
     if score == 0:
-        message = "\nOpps! You didn't get any questions right. Better luck next time." # This message diplays if the user got no qustions correct
-      
+          message = "\nOpps! You didn't get any questions right. Better luck next time."  # This message displays if the user got no questions correct
+            
     elif score <= 5:
-        message = f"\nYou got {score} out of {len(quiz)} questions correct. You can do better!" # This message displays if the user got 5 or less correct
-      
+          message = f"\nYou got {score} out of {len(quiz)} questions correct. You can do better!"  # This message displays if the user got 5 or less correct
+            
     elif score <= 9:
-        message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!" # this message displays if the user got 9 or less correct
-      
+          message = f"\nYou got {score} out of {len(quiz)} questions correct. Good job!"  # this message displays if the user got 9 or less correct
+            
     else:
-        message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!" # This message diplays if the user got 9 or above questions correct
-    
-    # Displays the messages above depending on the users score at the end of the quiz
+          message = f"\nCongratulations! You got {score} out of {len(quiz)} questions correct. You are a Spaltoon master!"  # This message displays if the user got 9 or above questions correct
+          
+      # Displays the messages above depending on the user's score at the end of the quiz
     print(message)
-  
+    
+      
     print("\nThanks taking the quiz!")
     print("\n\033[0;93m⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⠛⠛⣻⠿⠛⠩⠍⢒⣒⣛⣂⣀⠐⠺⠭⢛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ")
     print("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠅⣀⣥⣴⣶⠆⢀⣠⣶⣶⣿⣿⣿⣿⣿⣿⣷⣦⣤⣀⠁⠈⠝⠛⡿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿")
@@ -225,9 +226,9 @@ if start_quiz():
     print("⣿⣿⣿⣿⣿⣿⣿⠏⠊⣼⣿⣿⣄⠑⡈⢻⣿⣿⣿⡿⡛⢿⣿⣿⣿⠂⠘⣡⣶⣶⣤⣌⣑⠈⠳⠘⢛⣡⣤⣶⣶⣆⡐⢸⣿⣿⠟⢋⠁⠉⢿⠟⣉⠔⣁⣤⣾⣿⣿⡆⠃⢹⣿⣿⣿")
     print("⣿⣿⣿⣿⣿⣿⣿⡸⢠⡉⢿⣿⣿⣷⣌⠀⠙⠛⠉⢠⣶⣶⣿⣿⠟⢁⣾⣿⠿⢿⣿⣿⣿⣦⠀⢾⣿⣿⣿⣿⠿⣿⣷⣄⠙⠿⠿⠿⠋⠀⡠⠊⣡⣾⣿⣿⣿⣿⠟⣠⢱⣸⣿⣿⣿")
     print("⣿⣿⣿⣿⣿⡿⡁⢁⣿⣷⣈⠻⣿⣿⣿⣷⣄⠈⠲⣤⡉⠉⠉⠁⣀⣉⣭⣶⣶⣶⣦⣭⣭⠁⣠⠈⣭⣭⣴⣶⣶⣶⣬⣍⠑⠒⠒⠀⠠⢊⣴⣾⣿⣿⣿⣿⠟⣡⣾⣿⣆⠣⢻⣿⣿\033[0m")
-  
+      
     print("\nDepedning on screen size, you may need to scroll up for your score :)")
+        
     
-  
   # -------------------------------------------------------------- End ---------------------------------------------------------
   
