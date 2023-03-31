@@ -7,7 +7,7 @@
   TIP: Use assessment guide to help guide you through this Internal
 '''
 
-# -------------------------------------------------------------- Option to Start -----------------------------------------------
+# -------------------------------------------------------------- Option to Start ------------------------------------
 print("  ____        _       _                                  _    ")
 print(" / ___| _ __ | | __ _| |_ ___   ___  _ __     __ _ _   _(_)____  ")
 print(" \___ \| '_ \| |/ _` | __/ _ \ / _ \| '_ \   / _` | | | | |_  /  ")
@@ -67,7 +67,8 @@ if start_quiz():
     pass
 
 
-# ----------------------------------------------------- Quiz Questions\Setup ---------------------------------------------------
+# ----------------------------------------------------- Quiz Questions\Setup ----------------------------------------
+
 
 # Define the questions of the quiz as a list of dictionaries, where each dictionary represents a question and its choices for answers
     quiz = [
@@ -141,7 +142,7 @@ if start_quiz():
   # Initialize the score to 0
     score = 0
   
-  # ------------------------------------------------------- Quiz Output Code ---------------------------------------------------
+# ------------------------------------------------------- Quiz Output Code ------------------------------------------
   
           # Display the questions and choices, and get user input
       
@@ -184,8 +185,9 @@ if start_quiz():
           
       # Displays the messages above depending on the user's score at the end of the quiz
     print(message)
-    
-      
+
+
+  
     print("\nThanks taking the quiz!")
     print("\n\033[0;93m⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⠛⠛⣻⠿⠛⠩⠍⢒⣒⣛⣂⣀⠐⠺⠭⢛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ")
     print("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠅⣀⣥⣴⣶⠆⢀⣠⣶⣶⣿⣿⣿⣿⣿⣿⣷⣦⣤⣀⠁⠈⠝⠛⡿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿")
@@ -232,8 +234,8 @@ if start_quiz():
     print("⣿⣿⣿⣿⣿⣿⣿⡸⢠⡉⢿⣿⣿⣷⣌⠀⠙⠛⠉⢠⣶⣶⣿⣿⠟⢁⣾⣿⠿⢿⣿⣿⣿⣦⠀⢾⣿⣿⣿⣿⠿⣿⣷⣄⠙⠿⠿⠿⠋⠀⡠⠊⣡⣾⣿⣿⣿⣿⠟⣠⢱⣸⣿⣿⣿")
     print("⣿⣿⣿⣿⣿⡿⡁⢁⣿⣷⣈⠻⣿⣿⣿⣷⣄⠈⠲⣤⡉⠉⠉⠁⣀⣉⣭⣶⣶⣶⣦⣭⣭⠁⣠⠈⣭⣭⣴⣶⣶⣶⣬⣍⠑⠒⠒⠀⠠⢊⣴⣾⣿⣿⣿⣿⠟⣡⣾⣿⣆⠣⢻⣿⣿\033[0m")
       
-    print("\nDepedning on screen size, you may need to scroll up for your score :)")
+    print("\nDepending on screen size, you may need to scroll up for your score :)")
         
     
-  # -------------------------------------------------------------- End ---------------------------------------------------------
+# -------------------------------------------------------------- End ------------------------------------------------
   
