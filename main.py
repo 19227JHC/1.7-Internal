@@ -124,6 +124,11 @@ if start_quiz():
         "question": "What was the name of the final splatfest in Splatoon 2?",
         "choices": ["A.Splatocalypse", "B.Splatfest Memories", "C.Superfest"],
         "answer": "A"
+    },
+    {
+        "question": "What was the name of the final splatfest in Splatoon 2?",
+        "choices": ["A.Octo Swim", "B.Salmon Run", "C.Squid Run"],
+        "answer": "B"
     } 
     ]
 
