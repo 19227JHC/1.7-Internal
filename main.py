@@ -237,20 +237,20 @@ while True:
     print("\nDepending on screen size, you may need to scroll up for your score :)")
         
     
-    # Ask the user if they want to retake the quiz
+  # Ask the user if they want to retake the quiz, same input as beggining
     retake_quiz = input("\n\033[0;32mWould you like to retake the quiz? (Y/N): \033[0m").upper()
 
-    # If the user wants to retake the quiz, continue the loop
+# If the user wants to retake the quiz, print the message awsome then loop again
     if retake_quiz == "Y":
       print("\nAwsome!\n")
       continue
 
-    # If the user doesn't want to retake the quiz, break the loop and end the program
+  # If the user doesn't want to retake the quiz, pritn the message alright goodbye then end the program
     elif retake_quiz == "N":
         print("\nAlright, gooodbye :D")
         break
 
-    # If the user enters an invalid input, prompt them to enter again
+# If the user enters an invalid input
     else:
         print("\nInvalid input, please enter Y or N.")
         continue
