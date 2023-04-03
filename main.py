@@ -44,27 +44,27 @@ print("\nIf you are not ready to start the quiz, input N then press enter to con
 def start_quiz():
 
     # Asks the user if they are ready to start the quiz 
-    ready = input("\nAre you ready to start the quiz? (Y/N) ").lower()  # Use str.lower() method to make it so the program accepts both Y and y
+  ready = input("\n\033[0;92mAre you ready to start the quiz? (Y/N)\033[0m  ").lower()  # Use str.lower() method to make it so the program accepts both Y and y
   
     # If the user is ready to take the quiz and inputs Y, it will display the instructions and start the quiz 
-    if ready == "y":
+  if ready == "y":
         print("\nAwesome!\nTo take the quiz, input the letters 'A', 'B', or 'C' to select your answer to each question. Once chosen answer has been selected/inputted, press enter to confirm it.\nGood luck!\n")
         return True
 
     # If the user is not ready to take the quiz and inputs N, it will exit the program
-    elif ready == "n":
+  elif ready == "n":
         print("\nNo problem, come back when you're ready!")
         return False
 
     # If the user input is not a valid input, it will print this message until they input a valid one
-    else:
+  else:
         print("\033[0;31mInvalid input, please enter 'Y' or 'N'.\033[0m")
         return start_quiz()  # Call the function again if the user inputs an invalid input
 
 
 # Call the start_quiz function
 if start_quiz():
-    pass
+    
 
 
 # ----------------------------------------------------- Quiz Questions\Setup ----------------------------------------
@@ -143,7 +143,7 @@ if start_quiz():
     score = 0
   
 # ------------------------------------------------------- Quiz Output Code ------------------------------------------
-  
+while True:
           # Display the questions and choices, and get user input
       
     for i, q in enumerate(quiz):  # Loop through the shuffled quiz list with the enumerate function to number the questions
@@ -237,5 +237,22 @@ if start_quiz():
     print("\nDepending on screen size, you may need to scroll up for your score :)")
         
     
+    # Ask the user if they want to retake the quiz
+    retake_quiz = input("\n\033[0;32mWould you like to retake the quiz? (Y/N): \033[0m").upper()
+
+    # If the user wants to retake the quiz, continue the loop
+    if retake_quiz == "Y":
+      print("\nAwsome!\n")
+      continue
+
+    # If the user doesn't want to retake the quiz, break the loop and end the program
+    elif retake_quiz == "N":
+        print("\nAlright, gooodbye :D")
+        break
+
+    # If the user enters an invalid input, prompt them to enter again
+    else:
+        print("\nInvalid input, please enter Y or N.")
+        continue
 # -------------------------------------------------------------- End ------------------------------------------------
   
